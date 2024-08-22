@@ -18,10 +18,12 @@ class Solution(object):
         except ValueError as e:
             print(e)
 
-        for i in range(length - 1):
-            for j in range(i + 1, length):
-                if nums[i] + nums[j] == target:
-                    return [i, j]
+        hash_map = {}
+        for head, i_item in enumerate(nums):
+            complement = target - i_item
+            if complement in hash_map:
+                return [hash_map[complement], head]
+            hash_map[i_item] = head
         return []
 
 
