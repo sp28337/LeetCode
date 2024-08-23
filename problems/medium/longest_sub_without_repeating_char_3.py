@@ -1,4 +1,4 @@
-class Solution(object):
+class LengthOfLongestSubstring(object):
     @classmethod
     def length_of_longest_substring(cls, s: str) -> int:
         """
@@ -26,7 +26,7 @@ class Solution(object):
 
 
 if __name__ == "__main__":
-    solution = Solution()
+    solution = LengthOfLongestSubstring()
     assert solution.length_of_longest_substring("abcabcbb") == 3
     assert solution.length_of_longest_substring("bbbbb") == 1
     assert solution.length_of_longest_substring("pwwkew") == 3
