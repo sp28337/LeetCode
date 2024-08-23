@@ -1,28 +1,25 @@
 class LengthOfLongestSubstring(object):
     @classmethod
-    def length_of_longest_substring(cls, s: str) -> int:
+    def length_of_longest_substring(cls, string: str) -> int:
         """
         Retern length of longest substring with unique symbols in <s>
 
-        :type s: str
+        :type string: str
         :rtype: int
         """
 
-        str_len = len(s)
-        sub = []
-        count = 0
-        for i in range(str_len):
-            if count > str_len - i:
-                break
-            for index in range(i, str_len):
-                if s[index] in sub:
-                    break
-                sub.append(s[index])
-            length = len(sub)
-            if length > count:
-                count = length
-            sub = []
-        return count
+        unique_chars = {}
+        k = 0
+        max_sub = 0
+        for index in range(len(string)):
+            char = string[index]
+            if char in unique_chars and unique_chars[char] >= k:
+                k = unique_chars[char] + 1
+            else:
+                max_sub = max(max_sub, index - k + 1)
+            unique_chars[char] = index
+
+        return max_sub
 
 
 if __name__ == "__main__":
