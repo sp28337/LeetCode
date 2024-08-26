@@ -1,3 +1,4 @@
 from problems.medium.add_two_numbers_2 import ListNode, AddTwoNumbers
 from problems.medium.longest_sub_without_repeating_char_3 import LengthOfLongestSubstring
 from problems.medium.longest_palindromic_sub_5 import LongestPalindrome
+from problems.medium.zigzag_conversion_6 import ZigzagConversion
