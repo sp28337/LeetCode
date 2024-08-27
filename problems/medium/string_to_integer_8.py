@@ -1,6 +1,9 @@
 class MyAtoi(object):
-
-    def my_atoi(self, s: str) -> int:
+    @staticmethod
+    def my_atoi(s: str) -> int:
+        """ Convert a string to an integer """
+        if not isinstance(s, str):
+            raise TypeError('s must be a string')
         if s in ("", "-", "+"):
             return 0
 
