@@ -7,6 +7,8 @@ class IsPalindrome(object):
         :type x: int
         :rtype: bool
         """
+        if not isinstance(x, int):
+            raise TypeError('x must be an integer')
         x = str(x)
         length = len(x)
         tail = length - 1
