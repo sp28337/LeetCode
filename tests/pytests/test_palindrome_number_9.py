@@ -1,6 +1,6 @@
 import pytest
 
-from problems.easy import IsPalindrome
+from tests.pytests import IsPalindrome
 
 test = IsPalindrome()
 
@@ -17,7 +17,6 @@ test = IsPalindrome()
 )
 def test_positive(x, expected):
     assert test.is_palindrome(x) == expected
-
 
 
 @pytest.mark.parametrize(
