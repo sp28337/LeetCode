@@ -6,6 +6,9 @@ class ListNode(object):
         self.val = val
         self.next = next
 
+    def __str__(self) -> str:
+        return str(self.val)
+
     def __eq__(self, other):
         if not other:
             return False
@@ -22,17 +25,14 @@ class Solution24(object):
         """
         if not isinstance(head, (ListNode, type(None))):
             raise TypeError('head must be an instance of ListNode')
-        if not head:
-            return
+        if not head or not head.next:
+            return head
         prev = head
         curr = head.next
 
-        if curr:
-            curr.next = self.swap_pairs(curr.next)
-        else:
-            return head
+        prev.next = self.swap_pairs(curr.next)
+        curr.next = prev
 
-        curr.next, prev.next = prev, curr.next
         return curr
 
 
