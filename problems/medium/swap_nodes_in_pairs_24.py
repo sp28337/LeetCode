@@ -20,8 +20,8 @@ class Solution24(object):
         :type head: ListNode
         :rtype: ListNode
         """
-        if not isinstance(head, ListNode):
-            return None
+        if not isinstance(head, (ListNode, type(None))):
+            raise TypeError('head must be an instance of ListNode')
         if not head:
             return
         prev = head
@@ -42,7 +42,5 @@ if __name__ == "__main__":
     assert (test.swap_pairs(ListNode(1, ListNode(2, ListNode(3, ListNode(4))))) ==
             ListNode(2, ListNode(1, ListNode(4, ListNode(3)))))
     assert (test.swap_pairs(ListNode(1)) == ListNode(1))
-    assert (test.swap_pairs(None) is None)
-    assert (test.swap_pairs("asdf") is None)
-    assert (test.swap_pairs(1254) is None)
-    assert (test.swap_pairs({"h": 777, "g": 97}) is None)
+    assert (test.swap_pairs(ListNode()) == ListNode(0))
+    assert test.swap_pairs(None) is None

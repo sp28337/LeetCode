@@ -1,6 +1,6 @@
 import pytest
 
-from problems.medium import Reverse
+from tests.pytests import Reverse
 
 test = Reverse()
 

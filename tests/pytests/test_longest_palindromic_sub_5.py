@@ -1,6 +1,6 @@
 import pytest
 
-from problems.medium.longest_palindromic_sub_5 import LongestPalindrome
+from tests.pytests import LongestPalindrome
 
 solution = LongestPalindrome()
 

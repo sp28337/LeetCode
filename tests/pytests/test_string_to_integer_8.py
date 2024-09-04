@@ -1,6 +1,6 @@
 import pytest
 
-from problems import MyAtoi
+from tests.pytests import MyAtoi
 
 test = MyAtoi()
 
