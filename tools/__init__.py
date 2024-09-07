@@ -9,6 +9,9 @@ class Node:
         self.data = data
         self.is_key = is_key
 
+    def __str__(self) -> str:
+        return f"(data: {self.data}, is_key: {self.is_key}, childrens: {list(self.children.keys())} )"
+
 
 class Trie:
     """
@@ -45,6 +48,32 @@ class Trie:
                 continue
             return None
 
+    def __del__(self):
+        super().__del__()
+
+    def del_key(self, key: str, root=None) -> None:
+        if not key:
+            return
+        if not root:
+            root = self.root
+        length = len(key)
+        for index, elem in enumerate(key, start=1):
+            root = root.children[elem]
+            if index == length:
+                root.is_key = False
+                root.data = None
+
+    def del_leafs(self, root=None):
+        pass
+
+        # if not root:
+        #     root = self.root
+        #
+        # for key, val in root.children.items():
+        #     if not val.is_key and not val.children:
+        #         del root.children[key]
+        #     self.del_leafs(root=val)
+
 
 if __name__ == "__main__":
     trie = Trie()
@@ -56,3 +85,7 @@ if __name__ == "__main__":
     assert trie["brt"] == 9
     trie["rsm"] = 99
     assert trie["rsm"] == 99
+    trie.del_key("sg")
+    assert trie["sg"] is None
+    trie.del_leafs()
+    pass
