@@ -23,9 +23,6 @@ class BalancedBinaryTree:
         if not isinstance(root, Tree):
             raise TypeError('root must be an instance of Tree')
 
-        if not root:
-            return
-
         _, balanced = self.__height_and_balance(root)
         return balanced
 
