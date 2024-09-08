@@ -1,4 +1,4 @@
-from tests import LongestPalindrome, Tree, BalancedBinaryTree, MinDepth
+from tests import LongestPalindrome, Tree, BalancedBinaryTree, MinDepth, HasPathSum
 from tests import IsPalindrome
 from tests import Reverse
 from tests import MyAtoi
