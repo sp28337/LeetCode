@@ -1,7 +1,7 @@
-from problems import Tree
+from problems.easy import Tree
 
 
-class Solution(object):
+class MinDepth(object):
     @staticmethod
     def min_depth(root: Tree) -> int:
         """
@@ -10,6 +10,8 @@ class Solution(object):
         :type root: Tree
         :rtype: int
         """
+        if not isinstance(root, Tree):
+            raise TypeError('root must be an instance of Tree')
         if not root:
             return 0
         lvl = [root]
@@ -30,7 +32,7 @@ class Solution(object):
 
 if __name__ == "__main__":
     bst = Tree(3, left=Tree(9), right=Tree(20, left=Tree(15), right=Tree(7)))
-    assert Solution.min_depth(bst) == 2
+    assert MinDepth.min_depth(bst) == 2
 
     bst = Tree(2, right=Tree(3, right=(Tree(4, right=Tree(5)))))
-    assert Solution.min_depth(bst) == 4
+    assert MinDepth.min_depth(bst) == 4
