@@ -1,4 +1,4 @@
-from typing import Optional
+from typing import Optional, List
 
 
 class TreeNode(object):
@@ -17,19 +17,23 @@ class TreeNode(object):
 
 
 class SortedArrToBST(object):
-    def sorted_arr_to_bst(self, nums: list[int]) -> Optional[TreeNode]:
+    def sorted_arr_to_bst(self, nums: List[int]) -> Optional[TreeNode]:
         """
         Returns binary tree from sorted array
 
         :type nums: List[int]
         :rtype: TreeNode
         """
-
         if not nums:
             return
+        if not isinstance(nums, List):
+            raise TypeError
+
         mid_index = len(nums) // 2
         root = TreeNode(nums[mid_index])
         root.left = self.sorted_arr_to_bst(nums[:mid_index])
+        if not isinstance(root.val, int):
+            raise TypeError
         root.right = self.sorted_arr_to_bst(nums[mid_index + 1:])
 
         return root

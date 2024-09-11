@@ -20,3 +20,18 @@ sol = SortedArrToBST()
 )
 def test_positive_tests(x, expected):
     assert sol.sorted_arr_to_bst(x) == expected
+
+
+@pytest.mark.parametrize(
+    "input_list",
+    [
+        "not a list",
+        [1, 'a', 3],
+        1214,
+        1.54365,
+        (1, 4, 6)
+    ]
+)
+def test_negative_tests(input_list):
+    with pytest.raises(TypeError):
+        sol.sorted_arr_to_bst(input_list)
