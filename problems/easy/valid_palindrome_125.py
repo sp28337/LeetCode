@@ -5,6 +5,8 @@ def is_palindrome(s: str) -> bool:
     :type s: str
     :rtype: bool
     """
+    if not isinstance(s, str):
+        raise TypeError
 
     left = 0
     right = len(s) - 1
