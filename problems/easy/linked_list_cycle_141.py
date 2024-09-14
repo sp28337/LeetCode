@@ -11,7 +11,8 @@ def has_cycle(head: ListNode) -> bool:
     :type head: ListNode
     :rtype: bool
     """
-    if head is None:
+
+    if not head:
         return False
 
     slow = head
