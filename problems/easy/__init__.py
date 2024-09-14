@@ -8,3 +8,4 @@ from problems.easy.pascal_triangle_2_119 import get_row
 from problems.easy.valid_palindrome_125 import is_palindrome
 from problems.easy.convert_sorted_arr_to_binary_tree_108 import TreeNode, SortedArrToBST
 from problems.easy.intersection_of_two_linked_list_160 import ListNode, get_intersection_node
+from problems.easy.binary_tree_postorder_traversal_145 import postorder_traversal
