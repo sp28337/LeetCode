@@ -1,5 +1,3 @@
-from tests import LongestPalindrome, Tree, BalancedBinaryTree, MinDepth, HasPathSum, generate, is_palindrome, TreeNode
-from tests import IsPalindrome, SortedArrToBST
-from tests import Reverse
-from tests import MyAtoi
-from tests import ListNode24, Solution24
+from tests import LongestPalindrome, Tree, BalancedBinaryTree, MinDepth, HasPathSum, TreeNode, IsPalindrome
+from tests import get_intersection_node, generate, is_palindrome
+from tests import Reverse, SortedArrToBST, ListNode, MyAtoi, ListNode24, Solution24

@@ -39,31 +39,3 @@ def get_intersection_node(headA: Optional[ListNode], headB: Optional[ListNode]) 
             tmp[curr_b] = None
             curr_b = curr_b.next
     return
-
-
-def test():
-    tail = ListNode(8)
-    curr = tail
-    for node in [4, 5]:
-        curr.next = ListNode(node)
-        curr = curr.next
-
-    head1 = ListNode(4)
-    curr = head1
-    for node in [1]:
-        curr.next = ListNode(node)
-        curr = curr.next
-    curr.next = tail
-
-    head2 = ListNode(5)
-    curr = head2
-    for node in [6, 1]:
-        curr.next = ListNode(node)
-        curr = curr.next
-    curr.next = tail
-
-    assert get_intersection_node(head1, head2) == tail
-
-
-if __name__ == "__main__":
-    test()
